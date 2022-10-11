@@ -1,0 +1,207 @@
+/* 
+    Created on : 2022年10月4日, 下午2:03:57
+    Author     : user
+*/
+            /*box-sizing:設定盒子模式
+            預設為content-box(加入padding/border會向外延伸大小)
+            border-box為設定padding/border向內擴張(不影響整體大小(排版不走位))
+            */
+            *{
+                box-sizing: border-box;
+            }
+            body{
+                background-color: lightpink;
+                margin: 0px;
+            }
+            
+            nav{
+                background-color: lawngreen;
+                display: flex;
+                align-items: center;
+            }
+            /*
+            display → 變更顯示方式
+            list-style-type → 更改項目前符號
+            nav ul → 指定更改nav中的ul項目
+            */
+            nav ul{
+                margin: 0px;
+            }
+            nav li{
+                list-style-type: none;
+                display: inline-flex;
+                padding: 0.8vw;
+                font-size: 1.2rem;
+                color: green;
+            }
+            nav a{
+                text-decoration: none;
+            }
+            nav li:hover{
+                background-color: white;
+                color: chocolate;
+                border-left: 1px black solid;
+                border-right: 1px black solid;
+            }
+            /*
+            上下左右置中
+            display: flex; 變更顯示模式
+            justify-content: center; 設定為置中
+            align-items: center; 設定上下置中
+            background-image:可插入兩張圖片.較小的放前面以逗號隔開.設定同
+            background-size: cover;設定顯示圖片為延展顯示(等比例)
+            */
+            
+            header{
+                /*background-image: url('images/blueberry.png'),url('images/blueberry2.png'),url('images/blueberry.png'),url('images/blueberry2.png'),url('images/fruit/guava.jpg');*/
+                background-image: url('images/fruit/guava.jpg');
+                width: 100%;
+                height: 30vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 6rem;
+                color: mediumvioletred;
+                font-weight: bold;
+            }
+            
+            .menu{
+                padding: 0px;
+                margin: 0px;
+            }
+            .menu ul{
+                list-style-type: none;
+                padding: 0px;
+                margin: 0px;
+            }
+            .menu li{
+                padding: 8px;
+                border-bottom:  2px black solid;
+                border-radius: 20px;
+                background-color: lightskyblue;
+            }
+            .menu li:hover{
+                background-color: white;
+                background-image: url('images/blueberry.png');
+                background-size: 6%;
+                background-repeat: no-repeat;
+                background-position: 95%;
+                cursor: pointer;
+            }
+            .menu li:hover{
+                color: blue;                
+            }
+            .menu a{
+                text-decoration: none;
+                color: darkorchid; 
+            }
+            .menu video{
+                width: 100%;
+                margin-top: 10px;
+                border-radius: 10px;
+                border: 5px white solid;
+                box-shadow: 5px 5px 2px black;
+            }
+            .menu audio{
+                width: 100%;
+                margin-top: 10px;
+                box-shadow: 5px 5px 2px black;
+                border-radius: 30px;
+            }
+            
+            .content{
+            }
+            .content p{
+                text-align: justify;
+            }
+            .content iframe{
+                width: 100%;
+                height: 25vh;
+                border-radius: 20px;
+            }
+
+            .content-1{
+                float: left;
+                width: 34%;
+                border: 2px white solid;
+                border-radius: 20px;
+                display: flex;
+            }
+            .content-2{
+                float: right;
+                width: 66%;
+                border: 2px black solid;
+                border-radius: 20px;
+                display: flex;
+            }
+
+            
+            .article{
+            }
+            .article img{    
+                width: 90%;
+                border-radius: 50%;
+                border: 4px black dotted;
+                padding: 5px;
+                box-shadow: 5px 5px 3px rgba(0,0,0,0.5);
+
+            }
+            
+            footer{
+                /*設定位置為固定*/
+                position: fixed;
+                /*設定實際位置*/
+                left: 0px;
+                bottom: 0px;
+                width: 100%;
+                height: 3vh;
+                text-align: center;
+                background-color: lightsteelblue;
+            }
+            nav{
+                position: fixed;
+                left: 0px;
+                top: 0px;
+                width: 100%;
+            }
+            /*
+            將100%切割為12欄(col).1欄=8.33%
+            */
+               /*For Cell Phone*/
+            /*設定除了992及1200以外的顯示方式*/
+            [class *='col-']{
+                width: 100%;
+                float: left;
+                padding: 2vw;
+            }
+            /*For Tablet*/
+            @media only screen and (min-width:992px){
+                .col-m-1{width: 8.33%;}
+                .col-m-2{width: 16.66%;}
+                .col-m-3{width: 25.00%;}
+                .col-m-4{width: 33.33%;}
+                .col-m-5{width: 41.66%;}
+                .col-m-6{width: 50.00%;}
+                .col-m-7{width: 58.33%;}
+                .col-m-8{width: 66.66%;}
+                .col-m-9{width: 75.00%;}
+                .col-m-10{width: 83.33%;}
+                .col-m-11{width: 91.66%;}
+                .col-m-12{width: 100.00%;}
+            }
+            /*For PC*/
+            @media only screen and (min-width:1200px){
+                .col-l-1{width: 8.33%;}
+                .col-l-2{width: 16.66%;}
+                .col-l-3{width: 25.00%;}
+                .col-l-4{width: 33.33%;}
+                .col-l-5{width: 41.66%;}
+                .col-l-6{width: 50.00%;}
+                .col-l-7{width: 58.33%;}
+                .col-l-8{width: 66.66%;}
+                .col-l-9{width: 75.00%;}
+                .col-l-10{width: 83.33%;}
+                .col-l-11{width: 91.66%;}
+                .col-l-12{width: 100.00%;}
+            }
+
